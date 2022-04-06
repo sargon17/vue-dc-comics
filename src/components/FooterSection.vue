@@ -2,17 +2,19 @@
   <div class="footer-top">
     <div class="footer-content">
       <div class="footer-top__content">
-        <div class="footer-top__content__nav-list">
-          <h3>DC Comics</h3>
+        <div
+          class="footer-top__content__nav-list"
+          v-for="{ title, links } in footerNavigationData"
+          :key="title"
+        >
+          <h3>{{ title }}</h3>
           <ul>
-            <li class="footer-top__content__nav-item">
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
+            <li
+              class="footer-top__content__nav-item"
+              v-for="{ title, url } in links"
+              :key="title"
+            >
+              <a :href="url">{{ title }}</a>
             </li>
           </ul>
         </div>
@@ -25,8 +27,15 @@
 </template>
 
 <script>
+import footerNavigationData from "../data/footerNavigationData.js";
+
 export default {
   name: "FooterSection",
+  data() {
+    return {
+      footerNavigationData,
+    };
+  },
 };
 </script>
 
@@ -43,25 +52,37 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
   }
-  &__content__nav-list {
-    h3 {
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      li {
-        a {
-          text-decoration: none;
-          color: rgb(137, 137, 137);
-          font-size: 0.9rem;
-          transition: all 0.3s ease;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: hidden;
+    height: 40vh;
+    flex-wrap: wrap;
+    width: 50vw;
+    gap: 20px;
+    align-content: start;
 
-          &:hover {
-            color: #fff;
+    &__nav-list {
+      h3 {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          a {
+            text-decoration: none;
+            color: rgb(137, 137, 137);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #fff;
+            }
           }
         }
       }
@@ -69,10 +90,11 @@ export default {
   }
 
   &__logo {
-    height: 100%;
+    height: 40vh;
     overflow: hidden;
     img {
-      margin-top: -20%;
+      margin-top: -10%;
+      width: 100%;
     }
   }
 }
