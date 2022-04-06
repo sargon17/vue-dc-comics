@@ -3,6 +3,7 @@
     <HeaderComponent />
     <MainContentSection />
     <DivisorBanner />
+    <FooterSection />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainContentSection from "./components/MainContentSection.vue";
 import DivisorBanner from "./components/DivisorBanner.vue";
+import FooterSection from "./components/FooterSection.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     HeaderComponent,
     MainContentSection,
     DivisorBanner,
+    FooterSection,
   },
 };
 </script>
