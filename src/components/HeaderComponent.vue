@@ -73,7 +73,7 @@ export default {
       }
       &-link {
         position: relative;
-        padding: 0 0 43px 0;
+        padding: 0 0 40px 0;
         color: #383838;
         text-decoration: none;
         text-transform: uppercase;
@@ -84,15 +84,20 @@ export default {
           color: #0282f9;
 
           &:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #0282f9;
-            transition: transform 0.2s ease-in-out;
+            transform: scaleX(1);
           }
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: #0282f9;
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.2s ease-in-out;
         }
       }
     }
