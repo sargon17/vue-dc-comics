@@ -8,11 +8,11 @@
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li
-              v-for="{ title, id } in navigationData"
+              v-for="{ title, id, url } in navigationData"
               :key="id"
               class="header__nav-item"
             >
-              <a href="#" class="header__nav-item-link">{{ title }}</a>
+              <a :href="url" class="header__nav-item-link">{{ title }}</a>
             </li>
           </ul>
         </nav>

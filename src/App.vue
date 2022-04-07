@@ -35,4 +35,7 @@ export default {
 #app {
   font-family: "Montserrat" serif;
 }
+* {
+  scroll-behavior: smooth;
+}
 </style>
