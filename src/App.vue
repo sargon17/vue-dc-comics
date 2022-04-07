@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent />
-    <MainContentSection />
+    <MainContentSection :cardData="dcComics" />
     <DivisorBanner />
     <FooterSection />
   </div>
@@ -13,6 +13,8 @@ import MainContentSection from "./components/MainContentSection.vue";
 import DivisorBanner from "./components/DivisorBanner.vue";
 import FooterSection from "./components/FooterSection.vue";
 
+import dcComics from "@/data/dc-comics.json";
+
 export default {
   name: "App",
   components: {
@@ -20,6 +22,11 @@ export default {
     MainContentSection,
     DivisorBanner,
     FooterSection,
+  },
+  data() {
+    return {
+      dcComics,
+    };
   },
 };
 </script>
