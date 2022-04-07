@@ -1,6 +1,9 @@
 <template>
   <div class="main">
     <div class="main-content">
+      <div class="main-content-header">
+        <h2>Current Series</h2>
+      </div>
       <div class="main__cards-list">
         <ContentCard
           v-for="({ thumb, price, series, type }, index) in cardData"
@@ -9,8 +12,10 @@
           :price="price"
           :series="series"
           :type="type"
-          class="card"
         />
+      </div>
+      <div class="main-content__btn-wrapper">
+        <button>Load More</button>
       </div>
     </div>
   </div>
@@ -24,9 +29,7 @@ export default {
   components: {
     ContentCard,
   },
-  props: {
-    cardData: Array,
-  },
+  props: ["cardData"],
 };
 </script>
 
@@ -39,24 +42,52 @@ export default {
   &-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    position: relative;
+
+    &-header {
+      transform: translateY(-50%);
+      background: #0282f9;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 20px;
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+
+    &__btn-wrapper {
+      padding: 10px 20px;
+      text-align: center;
+      button {
+        background: #0282f9;
+        color: white;
+        border: 1px solid #0282f9;
+        padding: 0.5em 3em;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background: #fff;
+          color: #0282f9;
+        }
+      }
+    }
   }
 
   &__cards-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: baseline;
     width: 100%;
-    padding: 0 20px;
-
-    card {
-      width: 100% / 3;
-      margin: 20px;
-    }
+    padding: 40px 0;
+    gap: 10px;
   }
 }
 </style>

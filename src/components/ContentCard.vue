@@ -12,27 +12,30 @@
 <script>
 export default {
   name: "ContentCard",
-  props: {
-    thumb: String,
-    price: String,
-    series: String,
-    type: String,
-  },
+  props: ["thumb", "price", "series", "type"],
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
   overflow: hidden;
+  width: calc((100% / 12) * 2 - 20px);
 
   &__img-wrapper {
     width: 100%;
     aspect-ratio: 1;
-    background: #1c1c1c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+  }
+
+  &__content {
+    max-width: 100%;
+
+    .card__title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 10px 0;
+      text-transform: uppercase;
+    }
   }
 }
 </style>

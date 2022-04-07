@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import footerNavigationData from "../data/footerNavigationData.js";
+import footerNavigationData from "../data/footerNavigationData.json";
 import socialMediaData from "../data/socialMediaData.js";
 
 export default {
