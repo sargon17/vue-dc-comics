@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <div class="jumbotron"></div>
     <div class="main-content">
       <div class="main-content-header">
         <h2>Current Series</h2>
@@ -39,6 +40,14 @@ export default {
   background: #1c1c1c;
   color: white;
 
+  .jumbotron {
+    width: 100%;
+    height: 42vh;
+    background: url("@/assets/jumbotron.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
   &-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,7 +69,7 @@ export default {
     }
 
     &__btn-wrapper {
-      padding: 10px 20px;
+      padding: 20px 20px;
       text-align: center;
       button {
         background: #0282f9;
